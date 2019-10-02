@@ -1,20 +1,37 @@
-var path = require("path");
-var HtmlWebpackPlugin = require("html-webpack-plugin");
-
 module.exports = {
-  entry: "./src/index.js",
-  plugins: [new HtmlWebpackPlugin({
-    template: "./index.html"
-  })],
+  entry: "./src/index.jsx",
+  resolve: {
+    extensions: [".js", ".jsx"]
+  },
   module: {
     rules: [
       {
-        test: /\.css/,
+        test: /\.jsx?$/,
+        exclude: /(node_modules)/,
+        use: {
+          loader: "babel-loader",
+          query: {
+            presets: ["@babel/env", "@babel/react"]
+          }
+        }
+      },
+      {
+        test: /\.css$/,
         use: ["style-loader", "css-loader"]
       },
       {
-        test: [/\.scss/, /\.sass/],
-        use: ["style-loader", "css-loader", "sass-loader"]
+        test: /\.html/,
+        use: ["html-loader"]
+      },
+      {
+        test: /\.(svg|png|jpg|jpeg|gif)$/,
+        use: {
+          loader: "file-loader",
+          options: {
+            name: "[name]-[hash].[ext]",
+            outputPath: "assets"
+          }
+        }
       }
     ]
   }
