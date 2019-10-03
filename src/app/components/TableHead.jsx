@@ -14,7 +14,7 @@ const TableHead = ({ wineList, setWineList }) => {
   return (
     <thead className="table-head">
       <tr>
-        <th onClick={sortBy('top100_rank')}>Score</th>
+        <th onClick={sortBy('top100_rank')}>Rank</th>
         <th onClick={sortBy('wine_full')}>Wine</th>
         <th onClick={sortBy('winery_full')}>Winery</th>
         <th onClick={sortBy('vintage')}>Vintage</th>
@@ -29,11 +29,11 @@ const TableHead = ({ wineList, setWineList }) => {
 export default TableHead;
 
 TableHead.propTypes = {
-  wineList: PropTypes.array,
+  wineList: PropTypes.arrayOf(PropTypes.object),
   setWineList: PropTypes.func,
 };
 
 TableHead.defaultProps = {
   wineList: [],
   setWineList: () => {},
-}
+};
