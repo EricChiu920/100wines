@@ -1,0 +1,51 @@
+$topMargin: 20px;
+$descriptionHeight: 100px;
+$containerMaxHeight: calc(100vh - 100px - 20px);
+
+.table-container {
+  width: 100%;
+  margin-top: $topMargin;
+  max-height: $containerMaxHeight;
+  display: flex;
+  justify-content: center;
+  // max-height: 500px;
+  overflow-y: scroll;
+}
+
+.wine-table {
+  font-size: 20px;
+  width: 90%;
+  
+  tbody {
+
+    tr {
+      &:first-child {
+        border-top: 1px solid black;
+      }
+
+      &:hover {
+        background-color: rgba(104, 188, 240, 0.3);
+      }
+
+      td {
+        border-bottom: 1px solid black;
+        padding-right: 15px;
+      }
+    }
+  }
+}
+
+.description {
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  height: $descriptionHeight;
+  background-color: whitesmoke;
+  width: 90%;
+  font-size: 22px;
+
+  p {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
