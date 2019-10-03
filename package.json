@@ -1,16 +1,25 @@
 {
-  "name": "y",
-  "version": "y",
+  "name": "100_wines",
+  "version": "1.0.0",
   "main": "index.js",
   "author": "Eric Chiu",
   "license": "MIT",
   "private": false,
+  "engines": {
+    "node": "12.8.0"
+  },
   "scripts": {
-    "start": "webpack-dev-server --config webpack.dev.js --open",
-    "build": "webpack --config webpack.prod.js"
+    "start": "node ./server/index.js",
+    "watch": "webpack-dev-server --config webpack.dev.js --open",
+    "build": "webpack --config webpack.prod.js",
+    "server": "nodemon ./server/index.js"
   },
   "dependencies": {
     "axios": "^0.19.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "nodemon": "^1.19.3",
     "prop-types": "^15.7.2",
     "react": "^16.10.1",
     "react-dom": "^16.10.1"

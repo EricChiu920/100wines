@@ -8,8 +8,11 @@ $containerMaxHeight: calc(100vh - 100px - 20px);
   max-height: $containerMaxHeight;
   display: flex;
   justify-content: center;
-  // max-height: 500px;
   overflow-y: scroll;
+}
+
+.table-head {
+  cursor: pointer;
 }
 
 .wine-table {
@@ -17,7 +20,6 @@ $containerMaxHeight: calc(100vh - 100px - 20px);
   width: 90%;
   
   tbody {
-
     tr {
       &:first-child {
         border-top: 1px solid black;
@@ -40,7 +42,7 @@ $containerMaxHeight: calc(100vh - 100px - 20px);
   margin: 0 auto;
   align-items: center;
   height: $descriptionHeight;
-  background-color: whitesmoke;
+  background-color: rgb(171, 184, 172);
   width: 90%;
   font-size: 22px;
 

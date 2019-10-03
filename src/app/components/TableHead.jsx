@@ -1,5 +1,5 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 
 const TableHead = ({ wineList, setWineList }) => {
   const sortBy = (field) => {
@@ -12,7 +12,7 @@ const TableHead = ({ wineList, setWineList }) => {
   };
 
   return (
-    <thead>
+    <thead className="table-head">
       <tr>
         <th onClick={sortBy('top100_rank')}>Score</th>
         <th onClick={sortBy('wine_full')}>Wine</th>
@@ -27,3 +27,13 @@ const TableHead = ({ wineList, setWineList }) => {
 };
 
 export default TableHead;
+
+TableHead.propTypes = {
+  wineList: PropTypes.array,
+  setWineList: PropTypes.func,
+};
+
+TableHead.defaultProps = {
+  wineList: [],
+  setWineList: () => {},
+}

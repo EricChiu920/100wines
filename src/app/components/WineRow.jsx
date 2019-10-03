@@ -20,7 +20,8 @@ const WineRow = ({
     return () => {
       clearTimeout(debounceId);
       debounceId = setTimeout(() => {
-        fetchWine(wineId).then(({ data: { note } }) => {
+        fetchWine(wineId).then((res) => {
+          const { data: { note } } = res;
           setDescription(note);
         });
       }, 1000);
